@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EasyTextEffects;
+using TMPro;
 
 
 public class DemoAnimText : MonoBehaviour
@@ -33,20 +34,27 @@ public class DemoAnimText : MonoBehaviour
     TextEffect _effectsBetweenTwoAlphaTxt;
     [SerializeField]
     TextEffect _effectsBetweenTwoAlphaZeroTxt;
-    //[SerializeField]
-    //TextEffect _effectsRotateFadeInTxt;
-    //[SerializeField]
-    //TextEffect _effectsFadeMoveRotateScaleTxt;
+
+    [Space]
+    [Header("FPS Text")]
+    [SerializeField]
+    TextMeshProUGUI _fpsText;
+
+
+    private float deltaTime;
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
+        
         StartCoroutine(StartAnimTextLoop());
     }
 
     private void Update()
     {
-        //if (Input.GetKeyDown(_keuStartAnim))
-           
+        deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
+        float fps = 1.0f / deltaTime;
+        _fpsText.text = $"FPS: {Mathf.Ceil(fps)}";
     }
 
     IEnumerator StartAnimTextLoop()
