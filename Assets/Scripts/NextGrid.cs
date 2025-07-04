@@ -6,15 +6,10 @@ using UnityEngine;
 
 public class NextGrid : MonoBehaviour
 {
+    [Space]
     [Header("Grid")]
     [SerializeField]
     List<DataGrid> _listGridCon = new List<DataGrid>();
-
-    [Space]
-    [Header("Input")]
-    [SerializeField]
-    KeyCode _keyCodeNextGrid;
-
 
     [Space]
     [Header("Ease")]
@@ -32,7 +27,6 @@ public class NextGrid : MonoBehaviour
 
     private void Update()
     {
-
         if (idActiveGrid == _countGrid)
         {
             idActiveGrid = 0;
