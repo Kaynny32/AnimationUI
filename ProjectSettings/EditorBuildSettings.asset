@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: e8b9f089975df0b4bae894f4b4d2c1eb
+  - enabled: 1
+    path: Assets/Scenes/ScalePopapAnimation.unity
+    guid: 0a505f4820be1ff41ab7203afebd0713
+  - enabled: 1
+    path: Assets/Scenes/DemoEffectsText.unity
+    guid: d2a2cbbd89355034c9f51deba249e905
   m_configObjects: {}
